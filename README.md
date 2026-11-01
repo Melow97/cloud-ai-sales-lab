@@ -36,6 +36,10 @@ The homepage now uses a restrained light SaaS dashboard layout with a desktop na
 
 This branch is a design preview; interactive browser and accessibility testing still need to be completed before merging.
 
+## Interactive architecture blueprints
+
+[Blueprint Studio](./blueprint-studio.html) adds three fictional workloads and three selectable design layers (logical, security, operations), interactive keyboard-accessible component inspection, workflow mapping, SVG diagram export and a Markdown decision memo. The diagrams are conceptual learning artifacts, not deployed or validated Microsoft architectures. Everything works locally, with no paid service or AI API.
+
 ## Portfolio highlights
 
 - **Consultative discovery:** three fictional mid-market customer scenarios and guided discovery questions.
