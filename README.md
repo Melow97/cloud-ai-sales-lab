@@ -10,6 +10,14 @@ ATLAS is an independent, interactive solution-selling case study created by **Me
 
 Suggested interview flow: choose the retail scenario → change the data sensitivity and integration options → explain architecture trade-offs and risks → discuss pilot KPIs → export a workshop brief.
 
+## Architecture decision review
+
+[Open the five-pillar self-assessment](./architecture-review.html). A guided educational review of reliability, security, cost optimization, operational excellence, and performance efficiency, with 15 explainable considerations, automatically generated gap priorities, and a downloadable Markdown decision memo. Checked items represent unverified design intentions, not deployed or audited controls.
+
+**Recruiter demo (5 minutes):** start with the customer scenario in the Architect Lab, explain a security/integration trade-off, open the architecture decision review, check a few decisions, export the remaining action plan, and describe what real Azure deployment evidence would be needed next.
+
+**Evidence levels:** (1) simulated design: these browser labs; (2) local prototype: requires tests and artifacts; (3) deployed cloud POC: requires a verified Azure endpoint, resources, logs, cost information and security review; (4) production engagement: not claimed. Do not present simulations as professional Azure experience.
+
 ## Portfolio highlights
 
 - **Consultative discovery:** three fictional mid-market customer scenarios and guided discovery questions.
