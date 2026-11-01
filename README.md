@@ -24,6 +24,12 @@ Suggested interview flow: choose the retail scenario → change the data sensiti
 
 **Five-minute recruiter walkthrough:** Start with a fictional support customer → explain discovery and data boundaries → compare a good security choice against a tempting shortcut → discuss infrastructure-as-code and monitoring → export the review. This is an independent **learning exercise, not a Microsoft-approved assessment or evidence of a deployed Azure environment**.
 
+## Copilot-inspired AI Advisor (scripted demo)
+
+[Open the AI Advisor](./ai-advisor.html) to demonstrate a fictional customer advisory conversation, intent matching, follow-up discovery, security considerations, Copilot Studio versus Microsoft Foundry positioning, and export of a brief. **This is a deterministic JavaScript rules engine, not Microsoft Copilot, an LLM, a Copilot Studio deployment, or an Azure AI integration.** It requires no API key and makes no network calls. It is a transparent prototype of the user experience and intended workflow.
+
+A real AI integration would need approved platform access, authenticated backend or Copilot Studio publishing, permission-aware knowledge, evaluation, telemetry, licensing, and cost and privacy reviews. Never expose provider secrets or proprietary customer information in a public static website.
+
 ## Portfolio highlights
 
 - **Consultative discovery:** three fictional mid-market customer scenarios and guided discovery questions.
