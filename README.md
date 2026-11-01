@@ -4,6 +4,12 @@
 
 ATLAS is an independent, interactive solution-selling case study created by **Mel Ozturk**. It demonstrates how a B2B Cloud & AI sales specialist might move from customer discovery to use-case mapping, stakeholder qualification, financial value framing and a pilot decision.
 
+## New: Cloud Solution Architect Lab (IC2)
+
+[**Open the interactive architecture workshop**](./architect-lab.html) — a fictional customer exercise covering Azure-oriented architecture decisions, Entra identity, data governance, integration constraints, pilot-readiness checks, financial assumptions (including one-time implementation cost), and downloadable workshop briefs. This is conceptual design, **not a deployed Azure environment** or proof of professional cloud experience.
+
+Suggested interview flow: choose the retail scenario → change the data sensitivity and integration options → explain architecture trade-offs and risks → discuss pilot KPIs → export a workshop brief.
+
 ## Portfolio highlights
 
 - **Consultative discovery:** three fictional mid-market customer scenarios and guided discovery questions.
