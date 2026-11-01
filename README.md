@@ -18,6 +18,12 @@ Suggested interview flow: choose the retail scenario → change the data sensiti
 
 **Evidence levels:** (1) simulated design: these browser labs; (2) local prototype: requires tests and artifacts; (3) deployed cloud POC: requires a verified Azure endpoint, resources, logs, cost information and security review; (4) production engagement: not claimed. Do not present simulations as professional Azure experience.
 
+## New: cloud architect customer decision simulator
+
+[**Launch the interactive interview simulator**](./interview-simulator.html). Six customer scenarios cover discovery, Entra-aware permissions, AI output quality, repeatable deployment and monitoring, ROI/TCO, and adoption. Each scenario has educational scoring, feedback on trade-offs and a downloadable Markdown review.
+
+**Five-minute recruiter walkthrough:** Start with a fictional support customer → explain discovery and data boundaries → compare a good security choice against a tempting shortcut → discuss infrastructure-as-code and monitoring → export the review. This is an independent **learning exercise, not a Microsoft-approved assessment or evidence of a deployed Azure environment**.
+
 ## Portfolio highlights
 
 - **Consultative discovery:** three fictional mid-market customer scenarios and guided discovery questions.
