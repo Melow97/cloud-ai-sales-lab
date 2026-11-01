@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ATLAS Architect Lab | Microsoft Cloud & AI Scenario</title>
+<style>
+:root{color-scheme:dark;--bg:#08101c;--card:#122238;--border:#31506a;--text:#ecf4ff;--muted:#afc5d8;--teal:#6ce2ce;--warn:#ffcf84}*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 70% 0%,#163851,transparent 55%),var(--bg);font:15px/1.55 system-ui,sans-serif;color:var(--text)}
+main{max-width:1180px;margin:auto;padding:28px 20px 65px}a{color:var(--teal)}h1{font-size:clamp(32px,5vw,55px);letter-spacing:-.05em;line-height:1.12;margin:12px 0}h2{margin:0 0 12px;font-size:22px}h3{margin:8px 0}p{color:var(--muted)}.eyebrow{letter-spacing:.17em;text-transform:uppercase;color:var(--teal);font-size:11px;font-weight:700}.intro{max-width:740px}.layout{display:grid;grid-template-columns:360px 1fr;gap:18px;margin-top:25px}.panel{background:#122238d9;border:1px solid var(--border);padding:22px;border-radius:15px;margin-bottom:17px}.controls label{display:block;margin:17px 0 5px;font-weight:650;font-size:13px}select,input{width:100%;padding:11px;border-radius:9px;background:#0a182a;border:1px solid #47617c;color:var(--text);font:inherit}input[type=checkbox]{width:auto;accent-color:#5ee5d1}button{font:inherit;border-radius:8px;padding:10px 14px;background:var(--teal);color:#061b24;font-weight:750;border:0;cursor:pointer;margin:4px 8px 4px 0}button.secondary{background:transparent;color:var(--text);border:1px solid #6788a1}.pill{border:1px solid #527885;border-radius:40px;padding:4px 9px;font-size:12px;color:#9fe6db}.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.node{background:#0a1b2b;border:1px solid #4b7186;padding:13px;border-radius:10px;font-size:13px}.node strong{display:block;color:var(--teal)}.node small{color:var(--muted)}.readout{font-size:26px;font-weight:750;color:var(--teal)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.risk{border-left:3px solid var(--warn);padding:7px 12px;background:#432f223d;margin:9px 0}.check{display:block;margin:10px 0;color:var(--text)}.check input{margin-right:7px}.muted{font-size:12px;color:var(--muted)}.box{padding:13px;background:#0a1b2b;border:1px solid #294b65;border-radius:9px;margin:10px 0}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metrics>div{background:#0b1b2d;padding:12px;border-radius:10px}.metrics small{display:block;color:var(--muted)}ul{padding-left:19px}li{margin:6px 0}.notice{border:1px solid #866b40;background:#362c204d;padding:13px;border-radius:10px}.footer{font-size:12px;margin-top:32px;color:var(--muted)}@media(max-width:830px){.layout,.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}@media(max-width:520px){.steps,.metrics{grid-template-columns:1fr}}@media print{body{background:white;color:black}.panel,.node,.box,.metrics>div{background:white;color:black;border-color:#888}p,.muted,small{color:#444!important}.controls,button,.footer{display:none}.layout,.grid{display:block}.panel{break-inside:avoid}main{padding:10px}}
+</style></head><body><main>
+<a href="./index.html">← Back to ATLAS sales studio</a><p class="eyebrow">ATLAS / Cloud Solution Architecture Lab</p>
+<h1>From business problem to <span style="color:var(--teal)">technical design.</span></h1>
+<p class="intro">An interactive, fictional customer workshop showing the engineering questions behind a Cloud & AI proposal: architecture options, identity, data governance, pilot quality gates, implementation cost assumptions and next steps.</p>
+<div class="notice"><strong>Portfolio simulation — not a deployed Azure solution.</strong> Service choices are illustrative and subject to architecture, security, data residency, availability and official pricing review. No live Azure resources are created.</div>
+<div class="layout">
+<section class="panel controls">
+<h2>01 / Customer discovery</h2>
+<label for="scenario">Customer</label><select id="scenario"><option value="retail">Retail: AI-assisted support</option><option value="knowledge">Consultancy: knowledge search</option><option value="triage">Operations: case triage</option></select>
+<label for="region">Required deployment geography</label><select id="region"><option value="eu">EU data residency required</option><option value="global">Location flexible</option></select>
+<label for="sensitivity">Information sensitivity</label><select id="sensitivity"><option value="internal">Internal business data</option><option value="personal">Personal/customer data</option><option value="restricted">Highly restricted data</option></select>
+<label for="integration">Existing system integration</label><select id="integration"><option value="api">Documented APIs available</option><option value="manual">Manual exports only</option><option value="unknown">Not yet established</option></select>
+<label for="users">Pilot users (assumption)</label><input id="users" type="number" min="1" max="10000" value="25">
+<label for="hours">Hours saved per user/month (hypothesis)</label><input id="hours" type="number" min="0" max="160" step=".5" value="4">
+<label for="rate">Fully loaded hourly cost (€)</label><input id="rate" type="number" min="0" max="1000" value="38">
+<label for="monthly">Monthly operating cost estimate (€)</label><input id="monthly" type="number" min="0" max="10000000" value="2500">
+<label for="setup">One-time implementation estimate (€)</label><input id="setup" type="number" min="0" max="10000000" value="12000">
+<label for="months">Evaluation horizon (months)</label><input id="months" type="number" min="1" max="60" value="12">
+<button id="reset" class="secondary">Reset assumptions</button>
+</section>
+<div>
+<section class="panel"><div class="eyebrow">02 / Architecture hypothesis</div><h2 id="caseTitle"></h2><p id="caseContext"></p>
+<div class="steps" role="img" aria-label="Conceptual solution architecture from user to monitoring">
+<div class="node"><strong>1. Users / SSO</strong><small>Entra ID identity and access review</small></div>
+<div class="node"><strong>2. App / API</strong><small>Azure App Service or equivalent hosting option</small></div>
+<div class="node"><strong>3. Retrieval</strong><small>Approved knowledge, permission-aware indexing</small></div>
+<div class="node"><strong>4. Model</strong><small>Azure AI Foundry ecosystem; service validation needed</small></div>
+<div class="node"><strong>5. Observability</strong><small>Application Insights / Azure Monitor options</small></div>
+<div class="node"><strong>6. Governance</strong><small>Access, audit, retention, human review</small></div></div>
+<div class="box"><strong>Architecture rationale</strong><p id="architecture"></p></div>
+<div class="box"><strong>Open design questions</strong><ul id="questions"></ul></div></section>
+<section class="panel"><div class="eyebrow">03 / Technical risks</div><h2>Decision gates</h2><div id="risks" aria-live="polite"></div></section>
+<section class="panel"><div class="eyebrow">04 / Business case</div><h2>Transparent financial assumptions</h2><div class="metrics"><div><small>Monthly labour value</small><div class="readout" id="benefit">—</div></div><div><small>Total assumed cost</small><div class="readout" id="total">—</div></div><div><small>Illustrative ROI</small><div class="readout" id="roi">—</div></div></div><p class="muted" id="math"></p><p class="muted">Time savings are capacity value, not automatically cash savings. Figures are user-entered assumptions; no Azure usage or price quote is calculated.</p></section>
+<section class="panel"><div class="eyebrow">05 / Proof of concept</div><h2>Pilot readiness checklist</h2>
+<label class="check"><input type="checkbox" class="gate" value="Sponsor and business owner identified"> Sponsor and business owner identified</label>
+<label class="check"><input type="checkbox" class="gate" value="Baseline and target metrics agreed"> Baseline and target metrics agreed</label>
+<label class="check"><input type="checkbox" class="gate" value="Security and access review requested"> Security and access review requested</label>
+<label class="check"><input type="checkbox" class="gate" value="Approved sample data confirmed"> Approved sample data confirmed</label>
+<label class="check"><input type="checkbox" class="gate" value="Model quality and human review tests defined"> Model quality and human review tests defined</label>
+<label class="check"><input type="checkbox" class="gate" value="Official Azure prices and licensing verified"> Official Azure prices and licensing verified</label>
+<div class="box"><strong id="gateCount">0 / 6 gates considered</strong><p id="recommendation"></p></div>
+<button id="download">Download architecture brief</button><button id="print" class="secondary">Print workshop report</button>
+</section></div></div>
+<div class="grid"><section class="panel"><h3>Example pilot KPIs</h3><ul><li>Grounded response accuracy against approved test questions</li><li>Escalation and unsafe-answer rate</li><li>Mean time to resolution versus baseline</li><li>Adoption and human-review acceptance</li><li>Real metered Azure cost per useful outcome</li></ul></section>
+<section class="panel"><h3>Verify with official guidance</h3><ul><li><a href="https://learn.microsoft.com/en-us/azure/architecture/" target="_blank" rel="noopener">Azure Architecture Center</a></li><li><a href="https://learn.microsoft.com/en-us/entra/" target="_blank" rel="noopener">Microsoft Entra documentation</a></li><li><a href="https://azure.microsoft.com/en-us/pricing/calculator/" target="_blank" rel="noopener">Azure Pricing Calculator</a></li><li><a href="https://learn.microsoft.com/en-us/azure/azure-monitor/" target="_blank" rel="noopener">Azure Monitor documentation</a></li></ul></section></div>
+<p class="footer">© 2026 Mel Ozturk · Independent educational portfolio · No Microsoft endorsement, production infrastructure, genuine customer data, certified architecture or guaranteed financial outcomes.</p></main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const scenarios={
+retail:{title:'Retail support assistant',context:'A fictional retailer wants agents to find approved policies and draft order-support answers while retaining human approval.',architecture:'Begin with a permission-aware retrieval pattern over approved support documentation, human-reviewed responses and clear escalation routes. Validate whether Azure-hosted app/API and AI services suit latency, access and regional constraints.',questions:['Which support categories are safe for a pilot?','How are knowledge articles approved and updated?','What does the existing case system expose through APIs?']},
+knowledge:{title:'Professional-services knowledge assistant',context:'A fictional consultancy wants employees to find authoritative internal documents without bypassing document permissions.',architecture:'Keep source-level authorization and document lifecycle central to the design. Assess identity propagation, indexing freshness, citation quality, and whether a retrieval approach meets data policies.',questions:['Where is the source of truth?','Can users see only content they are authorized for?','What is the expected document freshness?']},
+triage:{title:'Operations case triage assistant',context:'A fictional operations team wants summaries and routing suggestions for incoming cases, not autonomous high-risk decisions.',architecture:'Use a human-in-the-loop pattern with case-system integration, audit logging, error handling, and restrictions on automated actions. Validate feasibility before selecting hosted compute and AI components.',questions:['Which actions must remain human-approved?','What are the case-system integration limits?','What incident response and rollback process is needed?']}
+};
+const defaults={scenario:'retail',region:'eu',sensitivity:'internal',integration:'api',users:25,hours:4,rate:38,monthly:2500,setup:12000,months:12};
+const money=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
+const val=id=>Number.isFinite(+$ (id).value)?Math.max(0,+$(id).value):0;
+function render(){
+ const s=scenarios[$('scenario').value];$('caseTitle').textContent=s.title;$('caseContext').textContent=s.context;$('architecture').textContent=s.architecture;
+ $('questions').replaceChildren(...s.questions.map(q=>{let li=document.createElement('li');li.textContent=q;return li}));
+ const risks=[];
+ if($('region').value==='eu')risks.push('Confirm availability, processing/storage locations, backup and logging residency for every selected service before promising EU-only handling.');
+ if($('sensitivity').value==='personal')risks.push('Perform privacy assessment, data minimization, retention and access-control design before using customer data.');
+ if($('sensitivity').value==='restricted')risks.push('Restricted information: halt any real-data pilot pending organizational security approval and verified service suitability.');
+ if($('integration').value==='manual')risks.push('Manual exports create stale-data and access risks; plan ingestion validation and ownership.');
+ if($('integration').value==='unknown')risks.push('Integration feasibility is unknown. Complete API/data discovery before claiming an implementable architecture.');
+ risks.push('Validate identity, least privilege, prompt-injection defense, evaluation datasets, human oversight, monitoring and incident response.');
+ $('risks').replaceChildren(...risks.map(r=>{let x=document.createElement('div');x.className='risk';x.textContent=r;return x}));
+ let users=Math.min(10000,val('users')),hours=Math.min(160,val('hours')),rate=Math.min(1000,val('rate')),monthly=Math.min(10000000,val('monthly')),setup=Math.min(10000000,val('setup')),months=Math.max(1,Math.min(60,val('months')));
+ let benefit=users*hours*rate,total=monthly*months+setup,gross=benefit*months,roi=total>0?100*(gross-total)/total:null;
+ $('benefit').textContent=money(benefit);$('total').textContent=money(total);$('roi').textContent=roi===null?'N/A':roi.toFixed(1)+'%';
+ $('math').textContent=users+' users × '+hours+' h × '+money(rate)+' = '+money(benefit)+'/month; '+months+' × '+money(monthly)+' + '+money(setup)+' setup = '+money(total)+' total. ROI=(gross labour value − total cost)/total cost.';
+ const checked=[...document.querySelectorAll('.gate:checked')].map(x=>x.value);$('gateCount').textContent=checked.length+' / 6 readiness criteria checked';
+ $('recommendation').textContent=checked.length===6?'Workshop checklist complete (self-attested). Independent validation, architecture review and approvals remain necessary.':'Do not treat this pilot as approved. Complete the remaining discovery and governance checks first.';
+}
+document.querySelectorAll('select,input').forEach(x=>x.addEventListener('input',render));
+$('reset').onclick=()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);document.querySelectorAll('.gate').forEach(x=>x.checked=false);render()};
+$('print').onclick=()=>window.print();
+$('download').onclick=()=>{const s=scenarios[$('scenario').value];const checked=[...document.querySelectorAll('.gate:checked')].map(x=>x.value);const report=[
+'ATLAS / FICTIONAL CLOUD SOLUTION ARCHITECTURE WORKSHOP',
+'Independent educational simulation. No deployed Azure resources or validated estimates.',
+'Scenario: '+s.title,'Context: '+s.context,'Conceptual design: '+s.architecture,
+'Geography: '+$('region').selectedOptions[0].text,'Data: '+$('sensitivity').selectedOptions[0].text,'Integration: '+$('integration').selectedOptions[0].text,
+'Architecture questions:',...s.questions.map(x=>'- '+x),
+'Technical risks:',...[...document.querySelectorAll('.risk')].map(x=>'- '+x.textContent),
+'Financial assumptions:','Monthly labour value: '+$('benefit').textContent,'Total assumed cost: '+$('total').textContent,'Illustrative ROI: '+$('roi').textContent,'Formula: '+$('math').textContent,
+'Self-attested pilot checks:',...checked.map(x=>'- '+x),
+'Next step: verify architecture, data governance, pricing, service availability and pilot outcomes with appropriate specialists.'
+].join('\n');const a=document.createElement('a');const url=URL.createObjectURL(new Blob([report],{type:'text/plain;charset=utf-8'}));a.href=url;a.download='ATLAS-architecture-workshop.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+render();
+</script></body></html>
