@@ -30,6 +30,12 @@ Suggested interview flow: choose the retail scenario → change the data sensiti
 
 A real AI integration would need approved platform access, authenticated backend or Copilot Studio publishing, permission-aware knowledge, evaluation, telemetry, licensing, and cost and privacy reviews. Never expose provider secrets or proprietary customer information in a public static website.
 
+## Application-style interface (free)
+
+The homepage now uses a restrained light SaaS dashboard layout with a desktop navigation sidebar, collapsible technical-tool menu, mobile slide-out menu, navigation overlay and keyboard Escape close support. The solution studio, scenario inputs, ROI model, proposal export and printing remain available. All interface functionality uses local HTML/CSS/JavaScript with no paid service or API dependency.
+
+This branch is a design preview; interactive browser and accessibility testing still need to be completed before merging.
+
 ## Portfolio highlights
 
 - **Consultative discovery:** three fictional mid-market customer scenarios and guided discovery questions.
