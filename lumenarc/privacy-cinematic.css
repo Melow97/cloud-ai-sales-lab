@@ -1,0 +1,10 @@
+/* LumenArc cinematic layer: original, remote-first, and local-only. */
+.topbar-right{gap:14px}
+.privacy-badge,.ad-badge{display:flex;align-items:center;gap:6px;font:500 9px 'DM Mono';letter-spacing:.08em}
+.privacy-badge{color:#b8e7c3}.privacy-badge i{width:6px;height:6px;border-radius:50%;background:#91e69c;box-shadow:0 0 9px #91e69c}
+.ad-badge{border:1px solid rgba(215,240,113,.35);border-radius:100px;padding:5px 8px;color:var(--lime)}
+.main-nav{gap:7px;border-bottom:0;margin-top:25px}.nav-item{border-radius:100px;padding:8px 13px 9px}.nav-item.is-active{background:rgba(255,255,255,.11);color:var(--ink)}.nav-item.is-active:after{display:none}
+.hero-grid{grid-template-columns:minmax(0,1.3fr) minmax(230px,.7fr);gap:16px;margin-top:28px}.hero-card,.signal-card{border-color:rgba(255,255,255,.13);box-shadow:0 18px 45px rgba(0,0,0,.2)}.hero-card{grid-template-columns:52% 48%;min-height:320px}.hero-art{min-height:320px}.hero-copy{padding:38px}.hero-copy h1{font-size:31px}.hero-card:hover,.signal-card:hover{border-color:rgba(119,215,255,.4)}
+.section-heading{margin-top:34px}.section-heading h2{font-size:19px}.media-card,.recommend-card,.library-card,.app-tile{border-radius:14px}.media-card:hover,.recommend-card:hover,.library-card:hover,.app-tile:hover{transform:scale(1.025);border-color:rgba(255,255,255,.4);box-shadow:0 12px 24px rgba(0,0,0,.23)}.card-art{height:145px}.recommend-card{min-height:150px}.remote-hint{margin-top:33px}
+@media(max-width:900px){.hero-card{grid-template-columns:1fr}.hero-art{min-height:250px}.privacy-badge{display:none}}
+@media(max-width:560px){.topbar-right .ad-badge{display:none}.main-nav{gap:2px}.nav-item{padding-left:10px;padding-right:10px}.hero-copy{padding:25px}.hero-copy h1{font-size:25px}}
