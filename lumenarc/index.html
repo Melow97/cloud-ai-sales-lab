@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08111d" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'none'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'" />
+    <title>LumenArc — Smart TV UI</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./privacy-cinematic.css" />
+  </head>
+  <body>
+    <main class="tv-shell" aria-label="LumenArc smart TV interface">
+      <div class="screen-glow" aria-hidden="true"></div>
+      <header class="topbar">
+        <button class="brand" data-nav="home" aria-label="LumenArc home">
+          <span class="brand-mark">◒</span><span>LUMEN<span>ARC</span></span>
+        </button>
+        <div class="topbar-right">
+          <span class="privacy-badge"><i></i> PRIVATE MODE</span>
+          <span class="ad-badge">AD-FREE</span>
+          <span class="time" id="clock">09:41</span>
+          <button class="avatar" aria-label="Open profile">M</button>
+        </div>
+      </header>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item is-active" data-nav="home" data-focusable>Home</button>
+        <button class="nav-item" data-nav="watchlist" data-focusable>My List <span class="nav-count">4</span></button>
+        <button class="nav-item" data-nav="apps" data-focusable>Apps</button>
+        <button class="nav-item" data-nav="guide" data-focusable>Guide</button>
+      </nav>
+
+      <section class="page is-visible" id="home-page">
+        <div class="hero-grid">
+          <article class="hero-card" tabindex="0" data-modal="ora">
+            <div class="hero-art" aria-hidden="true">
+              <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+              <span class="planet"></span><span class="hero-kicker">LUMENARC PREMIERE</span>
+              <span class="hero-title">ORA</span><span class="hero-subtitle">THE LAST GARDEN</span>
+            </div>
+            <div class="hero-copy">
+              <p class="eyebrow">Tonight's spotlight · New</p>
+              <h1>ORA: The Last Garden</h1>
+              <p class="muted">A quiet sci-fi mystery about the final green place on a moon-sized station.</p>
+              <div class="hero-meta"><span>2026</span><span>PG-13</span><span>1h 48m</span><span class="rating">★ 4.8</span></div>
+              <div class="actions"><button class="primary" data-play="ORA: The Last Garden">▶&nbsp; Play</button><button class="secondary" data-modal="ora">＋ My List</button></div>
+            </div>
+          </article>
+          <aside class="signal-card">
+            <div class="signal-header"><span>NOW ON</span><span class="live-dot">● LIVE</span></div>
+            <div class="now-art"><span class="now-stamp">A7</span><span class="now-name">NIGHT<br/>SHIFT</span></div>
+            <div class="now-copy"><strong>Night Shift FM</strong><span>Low light radio · 31 min left</span><div class="progress"><i style="width:72%"></i></div></div>
+            <button class="ghost-link" data-play="Night Shift FM">Listen now <span>→</span></button>
+          </aside>
+        </div>
+
+        <div class="section-heading"><div><p class="eyebrow">PICK UP WHERE YOU LEFT OFF</p><h2>Continue watching</h2></div><button class="text-button">See all <span>→</span></button></div>
+        <div class="card-row" id="continue-row">
+          <article class="media-card tall card-sand" tabindex="0" data-modal="glassline"><div class="card-top"><span class="tiny-chip">42%</span><span class="card-more">···</span></div><div class="card-art word-art"><small>GLASSLINE</small><strong>HEAT<br/>INDEX</strong><em>07</em></div><div class="card-info"><strong>Glassline: Heat Index</strong><span>S1 · Episode 3</span><div class="progress"><i style="width:42%"></i></div></div></article>
+          <article class="media-card tall card-violet" tabindex="0" data-modal="fieldnotes"><div class="card-top"><span class="tiny-chip">18%</span><span class="card-more">···</span></div><div class="card-art word-art"><small>FIELD<br/>NOTES</small><strong>WILD<br/>COAST</strong><em>02</em></div><div class="card-info"><strong>Field Notes: Wild Coast</strong><span>Season 2 · Episode 1</span><div class="progress"><i style="width:18%"></i></div></div></article>
+          <article class="media-card tall card-blue" tabindex="0" data-modal="minute"><div class="card-top"><span class="tiny-chip">63%</span><span class="card-more">···</span></div><div class="card-art word-art"><small>THE</small><strong>ONE<br/>MINUTE</strong><em>STORY</em></div><div class="card-info"><strong>The One Minute Story</strong><span>Documentary · 12 min</span><div class="progress"><i style="width:63%"></i></div></div></article>
+          <article class="media-card tall card-green" tabindex="0" data-modal="loop"><div class="card-top"><span class="tiny-chip">88%</span><span class="card-more">···</span></div><div class="card-art word-art"><small>LOOP</small><strong>BACK<br/>HOME</strong><em>04</em></div><div class="card-info"><strong>Loop: Back Home</strong><span>Season 1 · Episode 4</span><div class="progress"><i style="width:88%"></i></div></div></article>
+        </div>
+
+        <div class="section-heading recommendation-heading"><div><p class="eyebrow">MADE FOR MIRA</p><h2>A little to the left</h2></div><button class="text-button">Refresh <span>↻</span></button></div>
+        <div class="recommend-row">
+          <article class="recommend-card rec-one" tabindex="0" data-modal="salt"><span class="rec-label">98% match</span><strong>Salt / Signal</strong><span>Cool mysteries for a long night</span><button data-play="Salt / Signal">Play now <b>→</b></button></article>
+          <article class="recommend-card rec-two" tabindex="0" data-modal="slow"><span class="rec-label">94% match</span><strong>Slow<br/>Bloom</strong><span>Soft places to land</span><button data-play="Slow Bloom">Play now <b>→</b></button></article>
+          <article class="recommend-card rec-three" tabindex="0" data-modal="north"> <span class="rec-label">91% match</span><strong>North<br/>of Here</strong><span>Take the scenic route</span><button data-play="North of Here">Play now <b>→</b></button></article>
+        </div>
+      </section>
+
+      <section class="page" id="watchlist-page">
+        <div class="page-intro"><p class="eyebrow">YOUR COLLECTION</p><h1>My List</h1><p>Four things saved for later, ready when you are.</p></div>
+        <div class="library-grid">
+          <article class="library-card library-sun" data-modal="ora"><div><span>FEATURED</span><strong>ORA</strong><small>The Last Garden</small></div><button data-play="ORA: The Last Garden">Play</button></article>
+          <article class="library-card library-night" data-modal="fieldnotes"><div><span>DOCU-SERIES</span><strong>WILD COAST</strong><small>Field Notes · S2</small></div><button data-play="Field Notes: Wild Coast">Play</button></article>
+          <article class="library-card library-lilac" data-modal="slow"><div><span>FILM</span><strong>SLOW BLOOM</strong><small>A quiet little wonder</small></div><button data-play="Slow Bloom">Play</button></article>
+          <article class="library-card library-ink" data-modal="loop"><div><span>SERIES</span><strong>LOOP</strong><small>Back Home · S1</small></div><button data-play="Loop: Back Home">Play</button></article>
+        </div>
+      </section>
+
+      <section class="page" id="apps-page">
+        <div class="page-intro"><p class="eyebrow">SMART HUB</p><h1>Apps</h1><p>Everything your LumenArc can open, in one calm place.</p></div>
+        <div class="app-grid">
+          <button class="app-tile app-mira" data-app="Mira"><span>✦</span><strong>Mira</strong><small>Films & series</small></button>
+          <button class="app-tile app-tune" data-app="Tune"><span>◉</span><strong>Tune</strong><small>Radio & podcasts</small></button>
+          <button class="app-tile app-arcade" data-app="Arcade"><span>✣</span><strong>Arcade</strong><small>Play together</small></button>
+          <button class="app-tile app-weather" data-app="Skyline"><span>☼</span><strong>Skyline</strong><small>Weather & radar</small></button>
+          <button class="app-tile app-gallery" data-app="Gallery"><span>▧</span><strong>Gallery</strong><small>Your photos</small></button>
+          <button class="app-tile app-settings" data-app="Privacy"><span>◌</span><strong>Privacy</strong><small>Local only · no ads</small></button>
+        </div>
+      </section>
+
+      <section class="page" id="guide-page">
+        <div class="page-intro"><p class="eyebrow">LINEAR VIEW</p><h1>Tonight's guide</h1><p>A simple channel guide for the hours ahead.</p></div>
+        <div class="guide-list">
+          <button class="guide-row is-on" data-play="Night Shift FM"><span class="guide-time">NOW</span><span class="guide-art guide-a">A7</span><span class="guide-info"><strong>Night Shift FM</strong><small>Low light radio · ambient / 24h</small></span><span class="guide-status">● LIVE</span><span class="guide-arrow">→</span></button>
+          <button class="guide-row" data-play="The Long Light"><span class="guide-time">10:15</span><span class="guide-art guide-b">LL</span><span class="guide-info"><strong>The Long Light</strong><small>Travel / documentary · 45 min</small></span><span class="guide-status">UP NEXT</span><span class="guide-arrow">→</span></button>
+          <button class="guide-row" data-play="Good Company"><span class="guide-time">11:00</span><span class="guide-art guide-c">GC</span><span class="guide-info"><strong>Good Company</strong><small>Food / people · 30 min</small></span><span class="guide-status">LATER</span><span class="guide-arrow">→</span></button>
+          <button class="guide-row" data-play="Afterimage"><span class="guide-time">11:30</span><span class="guide-art guide-d">AI</span><span class="guide-info"><strong>Afterimage</strong><small>Film / nocturne · 1h 52m</small></span><span class="guide-status">LATER</span><span class="guide-arrow">→</span></button>
+        </div>
+      </section>
+
+      <footer class="remote-hint"><span><b>← →</b> Navigate</span><span><b>OK</b> Select</span><span><b>BACK</b> Exit</span><span class="model-note">LumenArc OS 1.0 · private by design</span></footer>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <dialog class="detail-dialog" id="detail-dialog"><button class="dialog-close" aria-label="Close">×</button><div class="dialog-art" id="dialog-art"></div><div class="dialog-content"><p class="eyebrow" id="dialog-kicker">FEATURED</p><h2 id="dialog-title">ORA: The Last Garden</h2><p id="dialog-description">A quiet sci-fi mystery about the final green place on a moon-sized station.</p><div class="hero-meta"><span>2026</span><span>PG-13</span><span>1h 48m</span><span class="rating">★ 4.8</span></div><button class="primary" id="dialog-play">▶&nbsp; Play now</button></div></dialog>
+    <script src="./app.js"></script>
+  </body>
+</html>
