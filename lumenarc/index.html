@@ -8,6 +8,7 @@
     <title>LumenArc — Smart TV UI</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./privacy-cinematic.css" />
+    <link rel="stylesheet" href="./mira.css" />
   </head>
   <body>
     <main class="tv-shell" aria-label="LumenArc smart TV interface">
@@ -91,6 +92,22 @@
           <button class="app-tile app-gallery" data-app="Gallery"><span>▧</span><strong>Gallery</strong><small>Your photos</small></button>
           <button class="app-tile app-settings" data-app="Privacy"><span>◌</span><strong>Privacy</strong><small>Local only · no ads</small></button>
         </div>
+      </section>
+
+      <section class="page mira-page" id="mira-page">
+        <div class="mira-topline"><button class="back-button" data-nav="apps">← All apps</button><span class="mira-private">MIRA · PRIVATE STREAMING HUB</span></div>
+        <div class="mira-heading"><div><p class="eyebrow">MIRA ORIGINALS</p><h1>Find your next somewhere.</h1><p>Original films, quiet obsessions, and stories with somewhere to go.</p></div><label class="mira-search"><span>⌕</span><input id="mira-search" type="search" placeholder="Search Mira" aria-label="Search Mira" /></label></div>
+        <div class="mira-feature" data-modal="stillwater" tabindex="0"><div class="mira-feature-art"><span>NEW FILM</span><strong>STILL /<br/>WATER</strong><small>A film by Anya Vale</small></div><div class="mira-feature-copy"><p class="eyebrow">MIRA PREMIERE · 98% MATCH</p><h2>Still / Water</h2><p>A cartographer returns to the coast she left behind and finds a map that should not exist.</p><div class="hero-meta"><span>2026</span><span>16+</span><span>1h 42m</span><span class="rating">★ 4.9</span></div><div class="actions"><button class="primary" data-play="Still / Water">▶&nbsp; Play</button><button class="secondary" data-modal="stillwater">＋ My List</button></div></div></div>
+        <div class="mira-controls"><button class="mira-filter is-active" data-filter="all">For you</button><button class="mira-filter" data-filter="film">Films</button><button class="mira-filter" data-filter="series">Series</button><button class="mira-filter" data-filter="documentary">Documentary</button></div>
+        <div class="section-heading"><div><p class="eyebrow">YOUR EVENING LINEUP</p><h2>Continue watching</h2></div><button class="text-button">See all <span>→</span></button></div>
+        <div class="mira-row" id="mira-row">
+          <article class="mira-card mira-card-amber" data-title="The Relay" data-genre="series" data-modal="relay" tabindex="0"><div class="mira-poster"><small>THE</small><strong>RELAY</strong><em>03</em></div><div class="mira-card-copy"><strong>The Relay</strong><span>S1 · Episode 3</span><div class="progress"><i style="width:61%"></i></div></div></article>
+          <article class="mira-card mira-card-lilac" data-title="Opal House" data-genre="film" data-modal="opal" tabindex="0"><div class="mira-poster"><small>OPAL</small><strong>HOUSE</strong><em>FILM</em></div><div class="mira-card-copy"><strong>Opal House</strong><span>Film · 1h 37m</span><div class="progress"><i style="width:28%"></i></div></div></article>
+          <article class="mira-card mira-card-sage" data-title="Terra Incognita" data-genre="documentary" data-modal="terra" tabindex="0"><div class="mira-poster"><small>TERRA</small><strong>INCOG-<br/>NITA</strong><em>04</em></div><div class="mira-card-copy"><strong>Terra Incognita</strong><span>Documentary · S1</span><div class="progress"><i style="width:84%"></i></div></div></article>
+          <article class="mira-card mira-card-blue" data-title="After Night" data-genre="series" data-modal="after" tabindex="0"><div class="mira-poster"><small>AFTER</small><strong>NIGHT</strong><em>06</em></div><div class="mira-card-copy"><strong>After Night</strong><span>S2 · Episode 6</span><div class="progress"><i style="width:13%"></i></div></div></article>
+        </div>
+        <div class="section-heading"><div><p class="eyebrow">BECAUSE YOU WATCHED ORA</p><h2>Make room for strange</h2></div><button class="text-button">Refresh <span>↻</span></button></div>
+        <div class="mira-row mira-discovery"><article class="mira-wide mira-wide-one" data-modal="night" tabindex="0"><span>91% match</span><strong>Night<br/>Archive</strong><small>Soft sci-fi for a late hour</small><button data-play="Night Archive">Play now →</button></article><article class="mira-wide mira-wide-two" data-modal="bluehour" tabindex="0"><span>89% match</span><strong>Blue<br/>Hour</strong><small>A little mystery, a lot of sky</small><button data-play="Blue Hour">Play now →</button></article><article class="mira-wide mira-wide-three" data-modal="signal" tabindex="0"><span>87% match</span><strong>Signal<br/>Loss</strong><small>Do not adjust the picture</small><button data-play="Signal Loss">Play now →</button></article></div>
       </section>
 
       <section class="page" id="guide-page">
